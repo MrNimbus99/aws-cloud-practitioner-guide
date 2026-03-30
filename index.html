@@ -37,8 +37,14 @@ a:hover { color: #06b6d4; border-bottom-color: #06b6d4; }
 .q-options { list-style: none; padding: 0; margin-bottom: 16px; }
 .q-options li { padding: 10px 14px; margin-bottom: 6px; border-radius: 8px; background: rgba(30, 40, 65, 0.6); border: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; color: #9ba3b8; }
 .q-options li.correct { background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.3); color: #6ee7b7; }
-.q-explain { background: rgba(99, 102, 241, 0.08); border-left: 3px solid #6366f1; padding: 16px 20px; border-radius: 0 10px 10px 0; margin-top: 12px; }
-.q-explain p { font-size: 0.92rem; color: #a5b4fc; white-space: pre-line; }
+.q-explain { margin-top: 12px; }
+.q-explain-item { padding: 14px 18px; border-radius: 10px; margin-bottom: 10px; font-size: 0.92rem; line-height: 1.75; }
+.q-explain-item.correct-exp { background: rgba(16, 185, 129, 0.08); border-left: 3px solid #10b981; }
+.q-explain-item.correct-exp .exp-label { color: #6ee7b7; }
+.q-explain-item.wrong-exp { background: rgba(239, 68, 68, 0.06); border-left: 3px solid rgba(239, 68, 68, 0.4); }
+.q-explain-item.wrong-exp .exp-label { color: #fca5a5; }
+.exp-label { font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; display: block; }
+.exp-text { color: #b4bcd0; }
 details { cursor: pointer; }
 details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding: 8px 0; }
 .footer { margin-top: 60px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: #6b7280; font-size: 0.9rem; }
@@ -98,10 +104,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: Horizontal scaling (adding/removing servers) combined with elasticity (automatic adjustment based on demand) describes the scenario where servers are automatically added during spikes and removed when traffic decreases.
-- Why A is wrong: Vertical scaling means increasing the size of existing servers, not adding/removing servers automatically.
-- Why C is wrong: Load balancing distributes traffic across servers but doesn't automatically add or remove servers based on demand.
-- Why D is wrong: Fault tolerance is about maintaining operations during failures, not about scaling based on traffic patterns.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">Horizontal scaling (adding/removing servers) combined with elasticity (automatic adjustment based on demand) describes the scenario where servers are automatically added during spikes and removed when traffic decreases.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">Vertical scaling means increasing the size of existing servers, not adding/removing servers automatically.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why C is wrong</span><span class="exp-text">Load balancing distributes traffic across servers but doesn't automatically add or remove servers based on demand.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">Fault tolerance is about maintaining operations during failures, not about scaling based on traffic patterns.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -115,10 +121,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: **Test recovery procedures** is a key design principle of the Reliability pillar. Practicing and validating backup, failover, and restore processes helps ensure the workload can recover as designed during real failures.
-- Why A is wrong: **Adopt a consumption model** is associated with Cost Optimization (pay only for what you use).
-- Why C is wrong: **Measure overall efficiency** is associated with Cost Optimization (understand outcomes versus spend).
-- Why D is wrong: **Implement a strong identity foundation** is a Security pillar design principle.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">**Test recovery procedures** is a key design principle of the Reliability pillar. Practicing and validating backup, failover, and restore processes helps ensure the workload can recover as designed during real failures.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">**Adopt a consumption model** is associated with Cost Optimization (pay only for what you use).</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why C is wrong</span><span class="exp-text">**Measure overall efficiency** is associated with Cost Optimization (understand outcomes versus spend).</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">**Implement a strong identity foundation** is a Security pillar design principle.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -132,10 +138,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: AWS Database Migration Service (DMS) supports continuous data replication from the source to the target so you can keep databases in sync and perform a low-downtime cutover.
-- Why A is wrong: AWS Snow Family devices are for offline, physical data transfer, not continuous database replication.
-- Why C is wrong: AWS Application Migration Service is designed to migrate servers and applications, not perform ongoing database replication.
-- Why D is wrong: AWS Migration Hub provides centralized tracking of migrations but does not replicate database data.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">AWS Database Migration Service (DMS) supports continuous data replication from the source to the target so you can keep databases in sync and perform a low-downtime cutover.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">AWS Snow Family devices are for offline, physical data transfer, not continuous database replication.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why C is wrong</span><span class="exp-text">AWS Application Migration Service is designed to migrate servers and applications, not perform ongoing database replication.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">AWS Migration Hub provides centralized tracking of migrations but does not replicate database data.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -149,10 +155,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: AWS License Manager helps manage software licenses from vendors like Microsoft, SAP, and Oracle. It tracks license usage and helps avoid over-purchasing or non-compliance, providing economic benefits.
-- Why A is wrong: Cost Explorer analyzes spending but doesn't specifically manage software licenses.
-- Why C is wrong: Systems Manager provides operational management but doesn't specifically track software licenses.
-- Why D is wrong: Organizations manages multiple AWS accounts but doesn't track software licenses.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">AWS License Manager helps manage software licenses from vendors like Microsoft, SAP, and Oracle. It tracks license usage and helps avoid over-purchasing or non-compliance, providing economic benefits.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">Cost Explorer analyzes spending but doesn't specifically manage software licenses.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why C is wrong</span><span class="exp-text">Systems Manager provides operational management but doesn't specifically track software licenses.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">Organizations manages multiple AWS accounts but doesn't track software licenses.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -166,10 +172,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: Multiple AWS Regions let the company deploy workloads in different geographic locations (for example, US, Europe, and Asia) to place applications closer to end users and reduce latency.
-- Why B is wrong: A VPC provides network isolation within a Region but does not provide geographic distribution.
-- Why C is wrong: Auto Scaling provides elasticity within a deployment but does not place workloads in different geographic Regions.
-- Why D is wrong: Multiple Availability Zones improve high availability within a single Region, but they do not address serving users in other continents with lower latency.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">Multiple AWS Regions let the company deploy workloads in different geographic locations (for example, US, Europe, and Asia) to place applications closer to end users and reduce latency.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why B is wrong</span><span class="exp-text">A VPC provides network isolation within a Region but does not provide geographic distribution.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why C is wrong</span><span class="exp-text">Auto Scaling provides elasticity within a deployment but does not place workloads in different geographic Regions.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">Multiple Availability Zones improve high availability within a single Region, but they do not address serving users in other continents with lower latency.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -183,10 +189,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: Amazon DynamoDB is a fully managed NoSQL database service. AWS manages the underlying infrastructure, hardware, scaling, and availability of the service. Customers focus on configuring tables, managing access controls, and protecting the data (for example, IAM permissions and encryption settings).
-- Why A is wrong: With Amazon EC2 and customer-managed AMIs, the customer is responsible for the guest OS and application maintenance (for example, patching and hardening).
-- Why C is wrong: Amazon VPC requires customers to design and manage network configurations (for example, subnets, route tables, and network ACLs).
-- Why D is wrong: Amazon EBS volumes require customers to manage how volumes are used (for example, encryption choices, snapshots/backups, and lifecycle management).</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">Amazon DynamoDB is a fully managed NoSQL database service. AWS manages the underlying infrastructure, hardware, scaling, and availability of the service. Customers focus on configuring tables, managing access controls, and protecting the data (for example, IAM permissions and encryption settings).</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">With Amazon EC2 and customer-managed AMIs, the customer is responsible for the guest OS and application maintenance (for example, patching and hardening).</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why C is wrong</span><span class="exp-text">Amazon VPC requires customers to design and manage network configurations (for example, subnets, route tables, and network ACLs).</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">Amazon EBS volumes require customers to manage how volumes are used (for example, encryption choices, snapshots/backups, and lifecycle management).</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -200,10 +206,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: AWS Shield is a managed DDoS protection service that safeguards applications running on AWS. Shield Standard is automatically included, and Shield Advanced provides enhanced protections.
-- Why A is wrong: AWS Firewall Manager centralizes management of firewall policies (for example, AWS WAF rules) across accounts, but it is not the DDoS protection service.
-- Why B is wrong: Amazon GuardDuty detects threats by analyzing logs, but it does not provide DDoS protection.
-- Why D is wrong: AWS WAF helps protect web applications from common web exploits (for example, SQL injection and XSS), but it is not the primary service for DDoS protection.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">AWS Shield is a managed DDoS protection service that safeguards applications running on AWS. Shield Standard is automatically included, and Shield Advanced provides enhanced protections.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">AWS Firewall Manager centralizes management of firewall policies (for example, AWS WAF rules) across accounts, but it is not the DDoS protection service.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why B is wrong</span><span class="exp-text">Amazon GuardDuty detects threats by analyzing logs, but it does not provide DDoS protection.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">AWS WAF helps protect web applications from common web exploits (for example, SQL injection and XSS), but it is not the primary service for DDoS protection.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -217,10 +223,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: IAM groups are collections of IAM users. You attach policies to the group, and all users in the group inherit those permissions, which simplifies managing access for teams.
-- Why A is wrong: Encryption keys are managed by AWS Key Management Service (AWS KMS), not by IAM groups.
-- Why C is wrong: VPC configurations are managed by Amazon VPC, not by IAM groups.
-- Why D is wrong: AWS Organizations is used to organize and manage multiple AWS accounts, not to group IAM users.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">IAM groups are collections of IAM users. You attach policies to the group, and all users in the group inherit those permissions, which simplifies managing access for teams.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">Encryption keys are managed by AWS Key Management Service (AWS KMS), not by IAM groups.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why C is wrong</span><span class="exp-text">VPC configurations are managed by Amazon VPC, not by IAM groups.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">AWS Organizations is used to organize and manage multiple AWS accounts, not to group IAM users.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -235,10 +241,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: Amazon GuardDuty provides managed threat detection by continuously monitoring AWS accounts, workloads, and data for suspicious activity. AWS Shield provides managed DDoS protection for applications running on AWS.
-- Why A is wrong: Amazon Macie is designed to discover and protect sensitive data stored in Amazon S3, not to detect threats or protect against DDoS attacks.
-- Why C is wrong: AWS Config monitors and records resource configurations for compliance evaluation, but it does not provide real-time threat detection or DDoS protection.
-- Why E is wrong: Amazon Inspector scans workloads for software vulnerabilities and unintended network exposure, but it does not provide ongoing threat detection or DDoS protection.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">Amazon GuardDuty provides managed threat detection by continuously monitoring AWS accounts, workloads, and data for suspicious activity. AWS Shield provides managed DDoS protection for applications running on AWS.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">Amazon Macie is designed to discover and protect sensitive data stored in Amazon S3, not to detect threats or protect against DDoS attacks.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why C is wrong</span><span class="exp-text">AWS Config monitors and records resource configurations for compliance evaluation, but it does not provide real-time threat detection or DDoS protection.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why E is wrong</span><span class="exp-text">Amazon Inspector scans workloads for software vulnerabilities and unintended network exposure, but it does not provide ongoing threat detection or DDoS protection.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -252,10 +258,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: The customer is responsible for security IN the cloud, including configuring Amazon S3 bucket policies and encryption settings (such as enforcing SSE-KMS) to meet their compliance requirements.
-- Why AWS only is wrong: AWS provides and secures the underlying S3 service and encryption capabilities, but AWS does not configure customer-specific data protection requirements.
-- Why &quot;Neither; encryption is automatic&quot; is wrong: S3 can encrypt objects at rest by default, but enforcing a specific encryption requirement (like SSE-KMS) and validating compliance is the customer's responsibility.
-- Why both AWS and the customer is wrong: AWS is responsible for the security OF the cloud and provides encryption features, but the customer owns the configuration and use of encryption controls for their data.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">The customer is responsible for security IN the cloud, including configuring Amazon S3 bucket policies and encryption settings (such as enforcing SSE-KMS) to meet their compliance requirements.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why AWS only is wrong</span><span class="exp-text">AWS provides and secures the underlying S3 service and encryption capabilities, but AWS does not configure customer-specific data protection requirements.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why &quot;Neither; encryption is automatic&quot; is wrong</span><span class="exp-text">S3 can encrypt objects at rest by default, but enforcing a specific encryption requirement (like SSE-KMS) and validating compliance is the customer's responsibility.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why both AWS and the customer is wrong</span><span class="exp-text">AWS is responsible for the security OF the cloud and provides encryption features, but the customer owns the configuration and use of encryption controls for their data.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -269,10 +275,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: The AWS Command Line Interface (CLI) is a unified tool for managing AWS services from the command line. It's ideal for scripting, automation, and batch operations.
-- Why A is wrong: The AWS Management Console is a web interface intended for interactive, manual management.
-- Why C is wrong: AWS SDKs are used to build programmatic interactions into application code (for example, Python/Java applications), not primarily for command-line scripting.
-- Why D is wrong: AWS Outposts is used for hybrid deployments, not as a tool to issue commands to AWS services.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">The AWS Command Line Interface (CLI) is a unified tool for managing AWS services from the command line. It's ideal for scripting, automation, and batch operations.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">The AWS Management Console is a web interface intended for interactive, manual management.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why C is wrong</span><span class="exp-text">AWS SDKs are used to build programmatic interactions into application code (for example, Python/Java applications), not primarily for command-line scripting.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">AWS Outposts is used for hybrid deployments, not as a tool to issue commands to AWS services.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -286,10 +292,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: Amazon CloudFront uses edge locations to cache and deliver content close to viewers worldwide, reducing latency. Deploying origins in multiple Regions improves resilience because the application can continue serving content if an origin Region has an outage and can reduce latency for cache misses by serving from a closer Region.
-- Why A is wrong: A single-Region deployment does not provide Regional disaster recovery and can increase latency for users far from the origin when content is not already cached.
-- Why B is wrong: On-premises servers do not provide a globally distributed edge network like CloudFront and would require the company to build and manage global distribution and failover.
-- Why D is wrong: A single Availability Zone does not provide Regional resilience and does not address global latency for worldwide viewers.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">Amazon CloudFront uses edge locations to cache and deliver content close to viewers worldwide, reducing latency. Deploying origins in multiple Regions improves resilience because the application can continue serving content if an origin Region has an outage and can reduce latency for cache misses by serving from a closer Region.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">A single-Region deployment does not provide Regional disaster recovery and can increase latency for users far from the origin when content is not already cached.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why B is wrong</span><span class="exp-text">On-premises servers do not provide a globally distributed edge network like CloudFront and would require the company to build and manage global distribution and failover.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">A single Availability Zone does not provide Regional resilience and does not address global latency for worldwide viewers.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -303,10 +309,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: AWS Lambda functions have a maximum execution time of 15 minutes per invocation. This makes Lambda suitable for short-running, event-driven tasks.
-- Why A is wrong: 1 hour exceeds the maximum Lambda execution time.
-- Why B is wrong: Lambda invocations have a defined time limit; they are not unlimited.
-- Why C is wrong: 5 minutes is below the maximum; Lambda can run longer than 5 minutes (up to 15 minutes).</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">AWS Lambda functions have a maximum execution time of 15 minutes per invocation. This makes Lambda suitable for short-running, event-driven tasks.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">1 hour exceeds the maximum Lambda execution time.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why B is wrong</span><span class="exp-text">Lambda invocations have a defined time limit; they are not unlimited.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why C is wrong</span><span class="exp-text">5 minutes is below the maximum; Lambda can run longer than 5 minutes (up to 15 minutes).</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -320,10 +326,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: AWS DMS requires a source database endpoint, a target database endpoint, and a replication instance to run the migration tasks and move data.
-- Why &quot;Complete application downtime&quot; is wrong: DMS is designed to support migrations with minimal downtime; it does not require the application to be down for the entire migration.
-- Why &quot;Only the target database&quot; is wrong: DMS needs both a source and a target (plus a replication instance) to migrate data.
-- Why &quot;Physical access to servers&quot; is wrong: DMS can work with on-premises and cloud databases using network connectivity and credentials; physical access is not required.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">AWS DMS requires a source database endpoint, a target database endpoint, and a replication instance to run the migration tasks and move data.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why &quot;Complete application downtime&quot; is wrong</span><span class="exp-text">DMS is designed to support migrations with minimal downtime; it does not require the application to be down for the entire migration.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why &quot;Only the target database&quot; is wrong</span><span class="exp-text">DMS needs both a source and a target (plus a replication instance) to migrate data.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why &quot;Physical access to servers&quot; is wrong</span><span class="exp-text">DMS can work with on-premises and cloud databases using network connectivity and credentials; physical access is not required.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -337,10 +343,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service. It routes end users to internet applications by translating domain names to IP addresses and returning DNS records.
-- Why AWS Direct Connect is wrong: AWS Direct Connect provides dedicated private network connectivity to AWS; it does not provide DNS.
-- Why Amazon CloudFront is wrong: Amazon CloudFront is a content delivery network (CDN), not a DNS service.
-- Why Amazon VPC is wrong: Amazon VPC provides virtual networking for your resources, not public DNS resolution.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service. It routes end users to internet applications by translating domain names to IP addresses and returning DNS records.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why AWS Direct Connect is wrong</span><span class="exp-text">AWS Direct Connect provides dedicated private network connectivity to AWS; it does not provide DNS.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why Amazon CloudFront is wrong</span><span class="exp-text">Amazon CloudFront is a content delivery network (CDN), not a DNS service.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why Amazon VPC is wrong</span><span class="exp-text">Amazon VPC provides virtual networking for your resources, not public DNS resolution.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -354,10 +360,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: Amazon S3 Standard is designed for 99.999999999% (11 nines) durability by redundantly storing objects across multiple devices and multiple Availability Zones.
-- Why A is wrong: 99.9% is far lower than S3's advertised durability and is closer to an availability-style number, not durability.
-- Why B is wrong: 99.99% is also far lower than S3's advertised durability.
-- Why D is wrong: 99.9999999% (9 nines) is high but still falls short of S3's actual 11-nines durability design. The distinction matters because S3 achieves 11 nines through redundant storage across multiple devices and multiple Availability Zones.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">Amazon S3 Standard is designed for 99.999999999% (11 nines) durability by redundantly storing objects across multiple devices and multiple Availability Zones.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">99.9% is far lower than S3's advertised durability and is closer to an availability-style number, not durability.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why B is wrong</span><span class="exp-text">99.99% is also far lower than S3's advertised durability.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">99.9999999% (9 nines) is high but still falls short of S3's actual 11-nines durability design. The distinction matters because S3 achieves 11 nines through redundant storage across multiple devices and multiple Availability Zones.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -371,10 +377,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: Amazon Kinesis is designed to collect, process, and analyze real-time streaming data with low latency.
-- Why Amazon S3 is wrong: Amazon S3 is object storage and does not provide real-time stream ingestion/processing.
-- Why AWS Batch is wrong: AWS Batch is for running batch compute jobs, not streaming ingestion.
-- Why Amazon RDS is wrong: Amazon RDS is a relational database service and is not intended for stream processing.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">Amazon Kinesis is designed to collect, process, and analyze real-time streaming data with low latency.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why Amazon S3 is wrong</span><span class="exp-text">Amazon S3 is object storage and does not provide real-time stream ingestion/processing.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why AWS Batch is wrong</span><span class="exp-text">AWS Batch is for running batch compute jobs, not streaming ingestion.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why Amazon RDS is wrong</span><span class="exp-text">Amazon RDS is a relational database service and is not intended for stream processing.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -388,10 +394,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: Enterprise Support provides 24/7 access to Cloud Support Engineers and includes a dedicated Technical Account Manager (TAM) for proactive guidance and operational reviews.
-- Why A is wrong: Basic Support includes self-service resources and does not provide a TAM.
-- Why B is wrong: Developer Support is intended for development use cases and does not include a TAM.
-- Why C is wrong: Business Support provides 24/7 access to Cloud Support Engineers but does not include a dedicated TAM.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">Enterprise Support provides 24/7 access to Cloud Support Engineers and includes a dedicated Technical Account Manager (TAM) for proactive guidance and operational reviews.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">Basic Support includes self-service resources and does not provide a TAM.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why B is wrong</span><span class="exp-text">Developer Support is intended for development use cases and does not include a TAM.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why C is wrong</span><span class="exp-text">Business Support provides 24/7 access to Cloud Support Engineers but does not include a dedicated TAM.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -405,10 +411,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: Deploying across multiple Availability Zones improves high availability and fault tolerance by running the workload in physically separate locations within the same Region. If one AZ experiences a failure, the application continues running in another AZ.
-- Why Automatic scaling of compute resources to match demand is wrong: Automatic scaling is provided by AWS Auto Scaling, not by deploying across multiple AZs. Multi-AZ provides redundancy, while Auto Scaling adjusts capacity based on demand — they are complementary but distinct concepts.
-- Why Lower latency for end users in other geographic regions is wrong: Availability Zones are located within a single Region. To reduce latency for users in other geographic regions, you would deploy in multiple Regions or use a content delivery network like Amazon CloudFront with edge locations.
-- Why Reduced costs by running fewer redundant resources is wrong: Multi-AZ deployments actually increase costs because you are running duplicate resources in separate Availability Zones. The trade-off is higher cost for improved availability.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">Deploying across multiple Availability Zones improves high availability and fault tolerance by running the workload in physically separate locations within the same Region. If one AZ experiences a failure, the application continues running in another AZ.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Explanation</span><span class="exp-text">Why Automatic scaling of compute resources to match demand is wrong: Automatic scaling is provided by AWS Auto Scaling, not by deploying across multiple AZs. Multi-AZ provides redundancy, while Auto Scaling adjusts capacity based on demand — they are complementary but distinct concepts.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Explanation</span><span class="exp-text">Why Lower latency for end users in other geographic regions is wrong: Availability Zones are located within a single Region. To reduce latency for users in other geographic regions, you would deploy in multiple Regions or use a content delivery network like Amazon CloudFront with edge locations.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Explanation</span><span class="exp-text">Why Reduced costs by running fewer redundant resources is wrong: Multi-AZ deployments actually increase costs because you are running duplicate resources in separate Availability Zones. The trade-off is higher cost for improved availability.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -422,10 +428,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: A Capacity Reservation reserves compute capacity for a specific instance type and tenancy in a specific Availability Zone, ensuring that capacity is available when you need it. You pay for the reservation at the applicable On-Demand rate whether or not you use it.
-- Why 'Free capacity for new customers' is wrong: The AWS Free Tier offers limited free usage for eligible services, but it does not reserve EC2 capacity.
-- Why 'Unused EC2 capacity at discounted rates' is wrong: Spot Instances provide access to unused EC2 capacity at discounted rates, but capacity is not guaranteed and instances can be interrupted.
-- Why 'A discount for long-term commitment' is wrong: Reserved Instances and Savings Plans focus on discounted pricing for committed usage; a Capacity Reservation is specifically for guaranteeing capacity in an Availability Zone (and can be combined with discounts separately).</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">A Capacity Reservation reserves compute capacity for a specific instance type and tenancy in a specific Availability Zone, ensuring that capacity is available when you need it. You pay for the reservation at the applicable On-Demand rate whether or not you use it.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why 'Free capacity for new customers' is wrong</span><span class="exp-text">The AWS Free Tier offers limited free usage for eligible services, but it does not reserve EC2 capacity.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why 'Unused EC2 capacity at discounted rates' is wrong</span><span class="exp-text">Spot Instances provide access to unused EC2 capacity at discounted rates, but capacity is not guaranteed and instances can be interrupted.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why 'A discount for long-term commitment' is wrong</span><span class="exp-text">Reserved Instances and Savings Plans focus on discounted pricing for committed usage; a Capacity Reservation is specifically for guaranteeing capacity in an Availability Zone (and can be combined with discounts separately).</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -439,10 +445,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: Consolidated billing combines usage from all accounts in an organization into a single bill (paid by the management/payer account). Aggregated usage can help qualify for tiered pricing and other account-level discounts, and it simplifies payment.
-- Why B is wrong: Consolidated billing is automated and managed through AWS Organizations.
-- Why C is wrong: Consolidated billing includes charges from all accounts in the organization—management and member accounts alike—not just the management account.
-- Why D is wrong: Consolidated billing combines charges into a single bill rather than producing separate bills per account.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">Consolidated billing combines usage from all accounts in an organization into a single bill (paid by the management/payer account). Aggregated usage can help qualify for tiered pricing and other account-level discounts, and it simplifies payment.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why B is wrong</span><span class="exp-text">Consolidated billing is automated and managed through AWS Organizations.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why C is wrong</span><span class="exp-text">Consolidated billing includes charges from all accounts in the organization—management and member accounts alike—not just the management account.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">Consolidated billing combines charges into a single bill rather than producing separate bills per account.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -456,10 +462,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: Business Support is the lowest-cost plan that provides 24/7 access to Cloud Support Engineers via phone, email, and chat, along with a less-than-1-hour response time for urgent production issues and full Trusted Advisor checks—making it the recommended starting point for production workloads.
-- Why Developer Support is wrong: Developer Support provides email-only access to Cloud Support Associates during business hours, with no phone or chat support. This is insufficient for production workloads that may experience critical issues outside business hours.
-- Why Basic Support is wrong: Basic Support does not include any access to Cloud Support Engineers. It only provides access to documentation, AWS re:Post, and 7 core Trusted Advisor checks.
-- Why 'No support plan needed' is wrong: Running production workloads without a support plan that includes access to AWS engineers creates unacceptable risk—there would be no way to get timely technical assistance during outages or critical incidents.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">Business Support is the lowest-cost plan that provides 24/7 access to Cloud Support Engineers via phone, email, and chat, along with a less-than-1-hour response time for urgent production issues and full Trusted Advisor checks—making it the recommended starting point for production workloads.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why Developer Support is wrong</span><span class="exp-text">Developer Support provides email-only access to Cloud Support Associates during business hours, with no phone or chat support. This is insufficient for production workloads that may experience critical issues outside business hours.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why Basic Support is wrong</span><span class="exp-text">Basic Support does not include any access to Cloud Support Engineers. It only provides access to documentation, AWS re:Post, and 7 core Trusted Advisor checks.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why 'No support plan needed' is wrong</span><span class="exp-text">Running production workloads without a support plan that includes access to AWS engineers creates unacceptable risk—there would be no way to get timely technical assistance during outages or critical incidents.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -473,10 +479,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: The AWS Trust and Safety team handles reports of AWS resources being used for abusive or illegal purposes, including phishing, spam, malware distribution, and other violations of the AWS Acceptable Use Policy. Customers and third parties can report abuse through the AWS abuse reporting form or by contacting abuse@amazonaws.com.
-- Why A is wrong: AWS Support Center is where customers create and manage technical support cases about their own AWS resources. It is not the channel for reporting abuse by other AWS users or third parties.
-- Why C is wrong: AWS Professional Services is a global team of experts that helps customers with cloud adoption, migrations, and architecture projects. It does not handle abuse investigations or enforcement actions.
-- Why D is wrong: The AWS Partner Network (APN) is a program for third-party consulting and technology partners to build solutions on AWS. It is not involved in abuse reporting or enforcement.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">The AWS Trust and Safety team handles reports of AWS resources being used for abusive or illegal purposes, including phishing, spam, malware distribution, and other violations of the AWS Acceptable Use Policy. Customers and third parties can report abuse through the AWS abuse reporting form or by contacting abuse@amazonaws.com.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">AWS Support Center is where customers create and manage technical support cases about their own AWS resources. It is not the channel for reporting abuse by other AWS users or third parties.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why C is wrong</span><span class="exp-text">AWS Professional Services is a global team of experts that helps customers with cloud adoption, migrations, and architecture projects. It does not handle abuse investigations or enforcement actions.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">The AWS Partner Network (APN) is a program for third-party consulting and technology partners to build solutions on AWS. It is not involved in abuse reporting or enforcement.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -492,12 +498,12 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why A is correct: Enabling CloudTrail logging across all Regions ensures complete visibility into API activity for security auditing and incident investigation, even in Regions you do not actively use.
-- Why B is wrong: Sharing credentials violates IAM best practices. Each person should have their own IAM identity so actions can be traced to individuals for accountability and auditing.
-- Why C is correct: Multi-factor authentication (MFA) adds a second layer of protection beyond a password. It is especially critical for privileged accounts that can modify security settings or access sensitive data.
-- Why D is correct: IAM roles provide temporary, automatically rotated credentials, eliminating the risk of exposed or forgotten long-term access keys. AWS recommends roles for applications running on EC2 and other services.
-- Why E is wrong: Embedding access keys in source code is a critical security anti-pattern. Keys can be leaked through version control repositories. Use IAM roles or AWS Secrets Manager instead.
-- Why F is wrong: CloudWatch alarms are essential for detecting operational and security anomalies. Disabling them removes visibility into potential threats and service issues.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why A is correct</span><span class="exp-text">Enabling CloudTrail logging across all Regions ensures complete visibility into API activity for security auditing and incident investigation, even in Regions you do not actively use.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why B is wrong</span><span class="exp-text">Sharing credentials violates IAM best practices. Each person should have their own IAM identity so actions can be traced to individuals for accountability and auditing.</span></div>
+<div class="q-explain-item correct-exp"><span class="exp-label">✓ Why C is correct</span><span class="exp-text">Multi-factor authentication (MFA) adds a second layer of protection beyond a password. It is especially critical for privileged accounts that can modify security settings or access sensitive data.</span></div>
+<div class="q-explain-item correct-exp"><span class="exp-label">✓ Why D is correct</span><span class="exp-text">IAM roles provide temporary, automatically rotated credentials, eliminating the risk of exposed or forgotten long-term access keys. AWS recommends roles for applications running on EC2 and other services.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why E is wrong</span><span class="exp-text">Embedding access keys in source code is a critical security anti-pattern. Keys can be leaked through version control repositories. Use IAM roles or AWS Secrets Manager instead.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why F is wrong</span><span class="exp-text">CloudWatch alarms are essential for detecting operational and security anomalies. Disabling them removes visibility into potential threats and service issues.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -511,10 +517,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: The People perspective of the AWS Cloud Adoption Framework (CAF) focuses on organizational change management, skills development, and workforce readiness to support cloud adoption. It addresses training, staffing, and cultural changes needed for a successful migration.
-- Why A is wrong: The Business perspective focuses on aligning cloud investments with business outcomes such as revenue growth and operational efficiency, not workforce skills.
-- Why C is wrong: The Platform perspective focuses on building an enterprise-grade cloud platform, including architecture patterns and infrastructure services.
-- Why D is wrong: The Security perspective focuses on ensuring data and workloads meet security and compliance requirements.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">The People perspective of the AWS Cloud Adoption Framework (CAF) focuses on organizational change management, skills development, and workforce readiness to support cloud adoption. It addresses training, staffing, and cultural changes needed for a successful migration.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">The Business perspective focuses on aligning cloud investments with business outcomes such as revenue growth and operational efficiency, not workforce skills.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why C is wrong</span><span class="exp-text">The Platform perspective focuses on building an enterprise-grade cloud platform, including architecture patterns and infrastructure services.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">The Security perspective focuses on ensuring data and workloads meet security and compliance requirements.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -528,10 +534,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: Amazon EKS (Elastic Kubernetes Service) provides a fully managed Kubernetes control plane, allowing teams to use standard Kubernetes APIs, kubectl, and existing Helm charts without managing master nodes.
-- Why A is wrong: Amazon ECS is AWS's proprietary container orchestration service. While it runs containers, it does not provide a Kubernetes-compatible API, so existing Kubernetes tooling would not work.
-- Why C is wrong: AWS Lambda is a serverless compute service for running individual functions in response to events. It does not support Kubernetes workloads or container orchestration.
-- Why D is wrong: Amazon EC2 provides virtual servers where you could manually install Kubernetes, but this is self-managed, not a managed Kubernetes service. The team would be responsible for maintaining the control plane.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">Amazon EKS (Elastic Kubernetes Service) provides a fully managed Kubernetes control plane, allowing teams to use standard Kubernetes APIs, kubectl, and existing Helm charts without managing master nodes.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">Amazon ECS is AWS's proprietary container orchestration service. While it runs containers, it does not provide a Kubernetes-compatible API, so existing Kubernetes tooling would not work.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why C is wrong</span><span class="exp-text">AWS Lambda is a serverless compute service for running individual functions in response to events. It does not support Kubernetes workloads or container orchestration.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">Amazon EC2 provides virtual servers where you could manually install Kubernetes, but this is self-managed, not a managed Kubernetes service. The team would be responsible for maintaining the control plane.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -545,10 +551,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: Amazon CloudWatch automatically collects infrastructure metrics such as CPU utilization, network traffic, and disk I/O from EC2 instances without additional configuration.
-- Why 'AWS CloudTrail' is wrong: CloudTrail records API calls made in your account for auditing, not infrastructure performance metrics.
-- Why 'AWS Config' is wrong: AWS Config tracks resource configuration changes and evaluates compliance rules, not real-time performance metrics.
-- Why 'AWS Systems Manager' is wrong: Systems Manager provides operational management capabilities like patching and remote command execution, not performance metric collection.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">Amazon CloudWatch automatically collects infrastructure metrics such as CPU utilization, network traffic, and disk I/O from EC2 instances without additional configuration.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why 'AWS CloudTrail' is wrong</span><span class="exp-text">CloudTrail records API calls made in your account for auditing, not infrastructure performance metrics.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why 'AWS Config' is wrong</span><span class="exp-text">AWS Config tracks resource configuration changes and evaluates compliance rules, not real-time performance metrics.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why 'AWS Systems Manager' is wrong</span><span class="exp-text">Systems Manager provides operational management capabilities like patching and remote command execution, not performance metric collection.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -562,10 +568,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: Agility in the cloud means the ability to quickly provision resources, experiment, and iterate. Unlike traditional on-premises environments where hardware procurement can take weeks, AWS enables teams to deploy new resources in minutes and remove them if they don't work out.
-- Why A is wrong: High availability refers to designing systems that remain operational with minimal downtime, not the speed of experimentation.
-- Why C is wrong: Economy of scale describes AWS's ability to offer lower prices due to aggregate customer usage, not the ability to experiment quickly.
-- Why D is wrong: Physical security is an AWS responsibility under the shared responsibility model but does not relate to rapid experimentation.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">Agility in the cloud means the ability to quickly provision resources, experiment, and iterate. Unlike traditional on-premises environments where hardware procurement can take weeks, AWS enables teams to deploy new resources in minutes and remove them if they don't work out.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">High availability refers to designing systems that remain operational with minimal downtime, not the speed of experimentation.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why C is wrong</span><span class="exp-text">Economy of scale describes AWS's ability to offer lower prices due to aggregate customer usage, not the ability to experiment quickly.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">Physical security is an AWS responsibility under the shared responsibility model but does not relate to rapid experimentation.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -579,10 +585,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: AWS Health Dashboard provides personalized alerts and remediation guidance when AWS infrastructure events may affect your specific resources. It shows both ongoing issues and scheduled maintenance, making it the first place to check when you suspect an AWS-side problem.
-- Why A is wrong: AWS CloudTrail records API calls made in your account — it is an audit trail for user and service actions, not a service health notification system.
-- Why B is wrong: Amazon CloudWatch monitors your resource metrics and logs (CPU, memory, custom metrics), but it does not report on AWS infrastructure events or service disruptions affecting the underlying platform.
-- Why D is wrong: AWS Trusted Advisor provides best-practice recommendations across cost, performance, security, fault tolerance, and service limits — it does not alert you to real-time AWS service events.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">AWS Health Dashboard provides personalized alerts and remediation guidance when AWS infrastructure events may affect your specific resources. It shows both ongoing issues and scheduled maintenance, making it the first place to check when you suspect an AWS-side problem.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">AWS CloudTrail records API calls made in your account — it is an audit trail for user and service actions, not a service health notification system.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why B is wrong</span><span class="exp-text">Amazon CloudWatch monitors your resource metrics and logs (CPU, memory, custom metrics), but it does not report on AWS infrastructure events or service disruptions affecting the underlying platform.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">AWS Trusted Advisor provides best-practice recommendations across cost, performance, security, fault tolerance, and service limits — it does not alert you to real-time AWS service events.</span></div></div>
 </details>
 </div>
 <div class="q-card">
@@ -596,10 +602,10 @@ details summary { color: #60a5fa; font-weight: 600; font-size: 0.95rem; padding:
 </ul>
 <details>
 <summary>Show Explanation</summary>
-<div class="q-explain"><p>- Why correct: AWS Organizations provides consolidated billing, which combines usage across all member accounts into a single invoice and enables volume pricing discounts. This is ideal for multi-account setups where finance needs centralized cost management.
-- Why A is wrong: AWS Budgets lets you set spending alerts and thresholds but does not consolidate billing across accounts or provide volume discounts.
-- Why C is wrong: AWS Cost Explorer is an analysis and visualization tool for understanding past spending patterns. It does not consolidate billing or enable volume discounts.
-- Why D is wrong: Amazon QuickSight is a business intelligence and visualization service. It is not a billing or account management tool.</p></div>
+<div class="q-explain"><div class="q-explain-item correct-exp"><span class="exp-label">✓ Why correct</span><span class="exp-text">AWS Organizations provides consolidated billing, which combines usage across all member accounts into a single invoice and enables volume pricing discounts. This is ideal for multi-account setups where finance needs centralized cost management.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why A is wrong</span><span class="exp-text">AWS Budgets lets you set spending alerts and thresholds but does not consolidate billing across accounts or provide volume discounts.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why C is wrong</span><span class="exp-text">AWS Cost Explorer is an analysis and visualization tool for understanding past spending patterns. It does not consolidate billing or enable volume discounts.</span></div>
+<div class="q-explain-item wrong-exp"><span class="exp-label">✗ Why D is wrong</span><span class="exp-text">Amazon QuickSight is a business intelligence and visualization service. It is not a billing or account management tool.</span></div></div>
 </details>
 </div>
 
